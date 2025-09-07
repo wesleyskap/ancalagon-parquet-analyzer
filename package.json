@@ -1,0 +1,16 @@
+﻿{
+  "name": "ancalagon-parquet-analyzer",
+  "version": "1.0.0",
+  "description": "Zero-dependency Node.js/TypeScript library for deep inspection, verification, compression scoring, and health analysis of Parquet files.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx --package=typescript tsc",
+    "test": "npx --package=typescript tsc && node --test --import tsx test/header-inspector.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3"
+  }
+}

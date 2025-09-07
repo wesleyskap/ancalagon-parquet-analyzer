@@ -1,0 +1,29 @@
+{
+  "name": "ancalagon-parquet-analyzer",
+  "version": "1.2.0",
+  "description": "Zero-dependency Node.js/TypeScript library for deep inspection, verification, compression scoring, Bloom filter validation, and health analysis of Parquet files.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx --package=typescript tsc",
+    "test": "npx --package=typescript tsc && node --test --import tsx test/header-inspector.test.ts test/binary-utils.test.ts test/thrift-decoder.test.ts test/schema-inspector.test.ts test/compression-evaluator.test.ts test/rowgroup-analyzer.test.ts test/bloom-filter-inspector.test.ts test/page-index-analyzer.test.ts test/dictionary-scorer.test.ts test/health-score.test.ts test/analyzer.test.ts"
+  },
+  "keywords": [
+    "parquet",
+    "analyzer",
+    "inspector",
+    "health-score",
+    "compression",
+    "bloom-filter",
+    "page-index",
+    "dictionary",
+    "thrift"
+  ],
+  "author": "Wesley Skap",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3"
+  }
+}
