@@ -20,3 +20,4 @@ export class ParquetHeaderInspector {
   }
 }
 
+// Truncated buffer check
