@@ -22,5 +22,3 @@
   }
 }
 
-// Compact Protocol field header decoding logic
-// Optional thrift field id resolution
