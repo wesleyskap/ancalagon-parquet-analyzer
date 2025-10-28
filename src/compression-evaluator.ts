@@ -18,3 +18,4 @@ export class CompressionEvaluator {
   }
 }
 
+// Encoding health scorer
