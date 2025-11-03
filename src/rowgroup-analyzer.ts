@@ -12,3 +12,4 @@ export class RowGroupAnalyzer {
   }
 }
 
+// 32MB threshold check
