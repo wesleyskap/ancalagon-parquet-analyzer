@@ -19,3 +19,4 @@ export class CompressionEvaluator {
 }
 
 // Encoding health scorer
+// Divide by zero check
