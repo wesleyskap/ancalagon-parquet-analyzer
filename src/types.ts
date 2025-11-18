@@ -11,3 +11,22 @@ export interface ColumnReport {
   compressionRatio: number;
   encodings: string[];
 }
+
+export interface RowGroupReport {
+  index: number;
+  rowCount: number;
+  totalSizeBytes: number;
+  isFragmented: boolean;
+}
+
+export interface DiagnosticReport {
+  isValidParquet: boolean;
+  totalSizeBytes: number;
+  rowCount: number;
+  rowGroupCount: number;
+  healthScore: number;
+  schemaFields: SchemaFieldReport[];
+  columns: ColumnReport[];
+  rowGroups: RowGroupReport[];
+  warnings: string[];
+}
