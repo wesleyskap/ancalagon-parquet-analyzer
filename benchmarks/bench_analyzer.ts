@@ -6,3 +6,4 @@ function runBenchmark() {
   analyzer.analyzeBuffer(mockBuffer);
 }
 runBenchmark();
+// Large buffer memory allocation scans
