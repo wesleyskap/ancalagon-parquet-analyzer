@@ -23,3 +23,4 @@ export class ParquetAnalyzer {
     };
   }
 }
+// Validate footer length
