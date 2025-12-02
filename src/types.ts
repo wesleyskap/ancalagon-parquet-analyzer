@@ -30,3 +30,4 @@ export interface DiagnosticReport {
   rowGroups: RowGroupReport[];
   warnings: string[];
 }
+// Diagnostic report property improvements
