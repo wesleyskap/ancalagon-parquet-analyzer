@@ -17,3 +17,4 @@ test("ParquetAnalyzer should produce end-to-end diagnostic report", () => {
   assert.ok(report.healthScore >= 0 && report.healthScore <= 100);
 });
 
+// Edge case test for corrupted buffer
