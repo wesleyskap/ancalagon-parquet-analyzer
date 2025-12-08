@@ -24,3 +24,4 @@ export class ParquetAnalyzer {
   }
 }
 // Validate footer length
+// Ensure exception propagation
