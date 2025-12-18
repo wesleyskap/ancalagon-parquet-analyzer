@@ -31,3 +31,12 @@ export interface DiagnosticReport {
   warnings: string[];
 }
 // Diagnostic report property improvements
+
+export interface BloomFilterReport {
+  columnName: string;
+  algorithm: "BLOCK_SPLIT_BLOOM_FILTER";
+  hashFunction: "XXHASH";
+  numBytes: number;
+  falsePositiveProbability: number;
+  isValid: boolean;
+}
