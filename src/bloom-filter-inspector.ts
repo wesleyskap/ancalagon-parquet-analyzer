@@ -58,3 +58,4 @@ export class BloomFilterInspector {
   }
 }
 
+// Uncompressed bitset handling
