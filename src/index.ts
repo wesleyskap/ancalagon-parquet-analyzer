@@ -7,4 +7,5 @@ export * from "./schema-inspector.js";
 export * from "./compression-evaluator.js";
 export * from "./rowgroup-analyzer.js";
 export * from "./health-score.js";
+export * from "./bloom-filter-inspector.js";
 export * from "./analyzer.js";
