@@ -40,3 +40,22 @@ export interface BloomFilterReport {
   falsePositiveProbability: number;
   isValid: boolean;
 }
+
+export interface PageIndexReport {
+  columnName: string;
+  hasColumnIndex: boolean;
+  hasOffsetIndex: boolean;
+  pageCount: number;
+  nullPageCount: number;
+  boundaryOrder: "UNORDERED" | "ASCENDING" | "DESCENDING";
+  canSkipPages: boolean;
+}
+
+export interface DictionaryEfficiencyReport {
+  columnName: string;
+  dictionaryEntries: number;
+  totalValues: number;
+  cardinalityRatio: number;
+  isEfficient: boolean;
+  savingsRatio: number;
+}
