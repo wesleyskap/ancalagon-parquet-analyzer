@@ -31,3 +31,4 @@ export class PageIndexAnalyzer {
   }
 }
 
+// Extract min/max page statistics
