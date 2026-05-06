@@ -14,4 +14,3 @@ test("ThriftMetadataDecoder should decode zigzag integer values", () => {
   assert.strictEqual(ThriftMetadataDecoder.decodeZigzag(1), -1);
 });
 
-// Thrift field header test coverage

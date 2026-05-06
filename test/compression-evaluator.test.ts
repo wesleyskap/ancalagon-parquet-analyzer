@@ -9,4 +9,3 @@ test("CompressionEvaluator should evaluate column compression ratios correctly",
   assert.strictEqual(col.compressedSizeBytes, 400);
 });
 
-// Encoding health tests

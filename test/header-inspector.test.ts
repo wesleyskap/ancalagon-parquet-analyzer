@@ -1,14 +1,21 @@
 ﻿import test from "node:test";
 import assert from "node:assert";
-import { ParquetHeaderInspector } from "../src/header-inspector.js";
-import { InvalidHeaderError } from "../src/errors.js";
+import { ParquetHeaderInspector, InvalidHeaderError } from "../src/header-inspector.js";
 
 test("ParquetHeaderInspector should validate valid PAR1 magic bytes", () => {
-  const buf = Buffer.from("PAR1some_parquet_data");
-  assert.strictEqual(ParquetHeaderInspector.isValidMagic(buf), true);
+  const validBuffer = Buffer.concat([
+    Buffer.from("PAR1"),
+    Buffer.alloc(8),
+    Buffer.from("PAR1"),
+  ]);
+
+  assert.strictEqual(ParquetHeaderInspector.isValidMagic(validBuffer), true);
+  assert.doesNotThrow(() => ParquetHeaderInspector.validateMagic(validBuffer));
 });
 
 test("ParquetHeaderInspector should throw InvalidHeaderError for invalid magic bytes", () => {
-  const invalidBuf = Buffer.from("CORRUPT");
-  assert.throws(() => ParquetHeaderInspector.validateMagic(invalidBuf), InvalidHeaderError);
+  const invalidBuffer = Buffer.from("INVALID_HEADER_BYTES");
+  assert.strictEqual(ParquetHeaderInspector.isValidMagic(invalidBuffer), false);
+  assert.throws(() => ParquetHeaderInspector.validateMagic(invalidBuffer), InvalidHeaderError);
 });
+

@@ -1,20 +1,21 @@
 ﻿export class ParquetAnalyzerError extends Error {
-  constructor(message: string) {
-    super(`ancalagon-parquet-analyzer: ${message}`);
+  public readonly code: string;
+  constructor(message: string, code: string = "ERR_PARQUET_ANALYZER") {
+    super(message);
     this.name = "ParquetAnalyzerError";
+    this.code = code;
   }
 }
 
 export class InvalidHeaderError extends ParquetAnalyzerError {
-  constructor(magic: string) {
-    super(`invalid magic header bytes ${magic}, expected 'PAR1'`);
-    this.name = "InvalidHeaderError";
+  constructor(header: string) {
+    super(`Invalid Parquet header magic bytes: expected 'PAR1', received '${header}'`, "ERR_INVALID_HEADER");
   }
 }
 
 export class CorruptedFooterError extends ParquetAnalyzerError {
-  constructor(message: string) {
-    super(`corrupted metadata footer: ${message}`);
-    this.name = "CorruptedFooterError";
+  constructor(reason: string) {
+    super(`Corrupted Parquet footer metadata: ${reason}`, "ERR_CORRUPTED_FOOTER");
   }
 }
+

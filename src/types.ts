@@ -19,19 +19,6 @@ export interface RowGroupReport {
   isFragmented: boolean;
 }
 
-export interface DiagnosticReport {
-  isValidParquet: boolean;
-  totalSizeBytes: number;
-  rowCount: number;
-  rowGroupCount: number;
-  healthScore: number;
-  schemaFields: SchemaFieldReport[];
-  columns: ColumnReport[];
-  rowGroups: RowGroupReport[];
-  warnings: string[];
-}
-// Diagnostic report property improvements
-
 export interface BloomFilterReport {
   columnName: string;
   algorithm: "BLOCK_SPLIT_BLOOM_FILTER";
@@ -59,3 +46,19 @@ export interface DictionaryEfficiencyReport {
   isEfficient: boolean;
   savingsRatio: number;
 }
+
+export interface DiagnosticReport {
+  isValidParquet: boolean;
+  totalSizeBytes: number;
+  rowCount: number;
+  rowGroupCount: number;
+  healthScore: number;
+  schemaFields: SchemaFieldReport[];
+  columns: ColumnReport[];
+  rowGroups: RowGroupReport[];
+  bloomFilters?: BloomFilterReport[];
+  pageIndexes?: PageIndexReport[];
+  dictionaryEfficiency?: DictionaryEfficiencyReport[];
+  warnings: string[];
+}
+

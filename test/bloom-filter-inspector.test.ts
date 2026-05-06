@@ -27,4 +27,3 @@ test("BloomFilterInspector.inspectBloomFilter handles empty or invalid buffer gr
   assert.equal(report.falsePositiveProbability, 1.0);
 });
 
-// False positive assertion checks
